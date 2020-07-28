@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>DEtails</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+DEtails PAGE
+        </h1>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/selectData">FAV</a>
+            <a href="/rand">RAND</a>
+        </nav>
+    </header>
+
+    <main>
+        <%console.log(data)%>
+        <%console.log(data.type)%>
+        <div class="all">
+            <div class="card">
+                <h2>Joke #</h2>
+                <h3><%=val.type%></h3>
+                <p><%=val.setup%></p>
+                <p><%=val.punchline%></p>
+
+                <div>
+                    <form action="/update/<%=val.id%>?_method=put" method="POST">
+                    <input type="submit" value="update">
+                    </form>
+                </div>
+                <div>
+                    <form action="/delete/<%=val.id%>?_method=delete" method="POST">
+                    <input type="submit" value="delete">
+                    </form>
+                </div>
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        EXAM @2020 COVID-19 :)
+    </footer>
+
+</body>
+
+</html>
