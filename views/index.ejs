@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>HOME</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+HOME PAGE
+        </h1>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="">FAV</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="all">
+            <%data.forEach(val=>{%>
+            <div class="card">
+                <h2>Joke #</h2>
+                <h3><%=val.type%></h3>
+                <p><%=val.setup%></p>
+                <p><%=val.punchline%></p>
+
+                <div>
+                    <form action="/addToDb" method="GET">
+                        <input type="hidden" name="type" value="<%=val.type%>">
+                        <input type="hidden" name="setup" value="<%=val.setup%>">
+                        <input type="hidden" name="punchline" value="<%=val.punchline%>">
+                        <input type="submit" value="Add To DataBase">
+                    </form>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </main>
+
+    <footer>
+        EXAM @2020 COVID-19 :)
+    </footer>
+
+</body>
+
+</html>
